@@ -8,6 +8,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import { SwiperModule } from 'ngx-swiper-wrapper';
 
 
 
@@ -21,8 +22,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatRadioModule
-
+    MatRadioModule,
+    SwiperModule
 
   ]
 })

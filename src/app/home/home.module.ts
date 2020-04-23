@@ -13,7 +13,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     CommonModule,
     HomeRoutingModule,
     MatProgressBarModule
-
   ]
 })
 export class HomeModule { }

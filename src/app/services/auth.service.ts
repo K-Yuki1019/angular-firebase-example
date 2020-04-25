@@ -21,7 +21,7 @@ export class AuthService {
   login() {
     this.afAuth.signInWithPopup(
       new auth.GithubAuthProvider()
-    ).then(result => {
+    ).then(() => {
       this.snackBar.open('ようこそGitpetへ！', null, {
         duration: 2000
       });

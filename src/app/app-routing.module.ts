@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './guards/auth.guard';
+import { GuestGuard } from './guards/guest.guard';
 
 
 const routes: Routes = [
@@ -13,8 +14,9 @@ const routes: Routes = [
   },
   {
     path: 'welcome',
-    loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule)
-
+    loadChildren: () => import('./welcome/welcome.module').then(m => m.WelcomeModule),
+    canLoad: [GuestGuard],
+    canActivate: [GuestGuard],
   },
   {
     path: 'create',

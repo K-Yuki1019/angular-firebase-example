@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth/';
-import { auth, User } from 'firebase';
+import { auth, User } from 'firebase/app';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -10,7 +10,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class AuthService {
   afUser$: Observable<User> = this.afAuth.user;
-
   constructor(
     private afAuth: AngularFireAuth,
     private router: Router,
@@ -26,15 +25,16 @@ export class AuthService {
       this.snackBar.open('ようこそGitpetへ！', null, {
         duration: 2000
       });
+      this.router.navigateByUrl('/create');
     });
   }
 
   logout() {
-    this.afAuth.signOut().then(() => {
-      this.snackBar.open('ログアウトしました', null, {
-      duration: 2000
+      this.afAuth.signOut().then(() => {
+        this.snackBar.open('ログアウトしました', null, {
+        duration: 2000,
+      });
+      this.router.navigateByUrl('/welcome');
     });
-  }),
-    this.router.navigateByUrl('/welcome');
   }
 }

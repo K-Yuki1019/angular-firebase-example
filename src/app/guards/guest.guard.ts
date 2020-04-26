@@ -18,7 +18,7 @@ export class GuestGuard implements CanActivate, CanLoad {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.authService.afUser$.pipe(
       map(user => !user),
-      tap(!isGuest => {
+      tap(isGuest => {
         if (!isGuest){
           this.router.navigateByUrl('/');
         }

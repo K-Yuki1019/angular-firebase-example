@@ -1,6 +1,8 @@
 export interface Pet {
-  avatarURL: string;
+  petImageId: number;
   name: string;
+  gender: 'male' | 'female';
   level: number;
   exp: number;
+  trainerID: string;
 }

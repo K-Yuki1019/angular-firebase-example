@@ -5,4 +5,5 @@ export interface Pet {
   level: number;
   exp: number;
   trainerID: string;
+  ownerGithubId: number;
 }
